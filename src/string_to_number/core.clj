@@ -1,0 +1,6 @@
+(ns string-to-number.core
+  (:gen-class))
+
+(defn string-to-number [str]
+  (read-string str)
+)
