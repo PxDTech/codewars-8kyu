@@ -7,10 +7,9 @@
 ;; Return true if you're better, else false!
 ;; Your points are not included in the array of your class's points. Do not forget them when calculating the average score!
 
-(defn total_points [class_points your_points]
-  (+ your_points (reduce + class_points)))
-
-(defn )
-
-(defn better_than_average [class_points your_points]
-  )
+(defn better-than-average
+  [class-points your-points]
+  (let [total-points (+ (reduce + class-points) your-points)
+        total-students (inc (count class-points))
+        average (/ total-points total-students)]
+    (> your-points average)))
