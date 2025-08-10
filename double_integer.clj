@@ -1,12 +1,7 @@
-(ns pasquale.double-integer
+(ns pasquale.code.codewars.double-integer
   (:gen-class))
 
-(defn greet
-  "Callable entry point to the application."
-  [data]
-  (println (str "Hello, " (or (:name data) "World") "!")))
+;; Code as fast as you can! You need to double the integer and return it.
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
-  (greet {:name (first args)}))
+(defn double-integer [i]
+  (* i 2))
