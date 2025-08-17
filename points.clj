@@ -17,5 +17,17 @@
 ;; We need to write a function that takes this collection and returns the number of points
 ;; our team (x) got in the championship by the rules given above.
 
-(defn points [games]
-  )
+(defn match-points
+  "Takes a string 'x:y' and returns the number of points earned."
+  [games]
+  (let [[x y] (map #(Integer/parseInt %)
+                   (clojure.string/split games #":"))]
+    (cond
+      (> x y) 3  ;; win
+      (= x y) 1  ;; tie
+      :else 0))) ;; loss
+
+(defn points
+  "Takes a collection of 10 match result strings and returns total points."
+  [games]
+  (reduce + (map match-points games)))
